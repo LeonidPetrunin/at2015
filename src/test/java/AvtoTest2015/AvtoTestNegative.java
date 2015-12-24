@@ -6,6 +6,7 @@ import AvtoTest2015.pages.RegPage;
 import AvtoTest2015.util.LogLog4j;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,6 +24,7 @@ public class AvtoTestNegative extends TestNgTestBase{
 
     @BeforeClass(alwaysRun = true)
     public void setup() {
+        Log.info("Negative AutoTests started . . .");
         regPage= PageFactory.initElements(driver, RegPage.class);
         Log.info("Open driverPage!");
         regPage.openLoginPage(driver);
@@ -36,7 +38,7 @@ public class AvtoTestNegative extends TestNgTestBase{
 
     @Test(groups = {"smoke", "negative"},dataProviderClass = DataProviders.class, dataProvider = "loadInvalidLoginFromFile")
      public void FieldPageElementsWithoutName(String first, String second, String email, String pass) throws IOException, InterruptedException {
-        Log.info("AutoTests started . . .");
+        Log.info("DriverPage was opened. Start TestMethods!");
         regPage.waitUntilPageIsLoaded();
         regPage
                 .addFirstName(first)
@@ -45,9 +47,9 @@ public class AvtoTestNegative extends TestNgTestBase{
                 .addPasswords(pass);
         regPage.checkSwitchButt();
         regPage.checkAddButt();
-
-       // Assert.assertFalse(regPage.inTableFrame(), "Registered not success!");
-        //Log.info("FirstName wasn't inscribed!");
+        //Assert.assertTrue(regPage.inTableFrame(), "Registered not success!");
+        Log.info("Registered not success!");
+        driver.navigate().refresh(); //Команда обновляет страницу после каждого теста!
     }
 /*
 
