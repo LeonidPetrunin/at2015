@@ -5,6 +5,9 @@
     <classes>
       <class name="AvtoTest2015.AvtoTestPositive"/>
     </classes>
-  </test>  
+  </test>
+  <listeners>
+    <listener class-name="AvtoTest2015.Listeners.TestListener"/>
+  </listeners>
 </suite>
 
