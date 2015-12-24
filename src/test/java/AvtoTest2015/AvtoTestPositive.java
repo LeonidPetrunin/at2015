@@ -3,6 +3,7 @@ package AvtoTest2015;
 
 import AvtoTest2015.pages.RegPage;
 import AvtoTest2015.util.LogLog4j;
+import com.github.yev.FailTestScreenshotListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -15,6 +16,8 @@ import java.io.IOException;
 /**
  * Created by leoni on 20.12.2015.
  */
+
+@org.testng.annotations.Listeners(FailTestScreenshotListener.class)
 public class AvtoTestPositive extends TestNgTestBase{
     private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
     public RegPage regPage;
