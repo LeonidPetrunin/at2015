@@ -6,6 +6,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
@@ -17,10 +18,11 @@ public class TestNgTestBase {
   public static String baseUrl;
   protected static Capabilities capabilities;
   protected static String gridHubUrl;
-  public WebDriver driver;
+  public static WebDriver driver;
 
   @BeforeSuite
   public void initTestSuite() throws IOException {
+    System.out.println("We are in TestNgTestBase initTestSuite BeforeSuite");
     baseUrl = PropertyLoader.loadProperty("site.url");
     capabilities = PropertyLoader.loadCapabilities();
     //WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
@@ -32,8 +34,9 @@ public class TestNgTestBase {
     return driver;
   }
 
-  @AfterClass(alwaysRun = true)
+  @AfterSuite(alwaysRun = true)
   public void tearDown() {
+    System.out.println("We are in TestNgTestBase tearDown AfterClass");
     if (driver != null) {
       driver.quit();
     }

@@ -3,7 +3,7 @@
 <suite name="SuperTest" verbose="5">
   <test name="Test1">
     <classes>
-
+      <class name="AvtoTest2015.AvtoTestPositive"/>
       <class name="AvtoTest2015.AvtoTestNegative"/>
     </classes>
   </test>
