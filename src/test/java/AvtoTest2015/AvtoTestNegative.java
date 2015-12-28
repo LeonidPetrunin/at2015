@@ -38,7 +38,7 @@ public class AvtoTestNegative extends TestNgTestBase{
     }
 
     @Test(groups = {"smoke", "negative"},dataProviderClass = DataProviders.class, dataProvider = "loadInvalidLoginFromFile")
-     public void FieldPageElementsWithoutName(String first, String second, String email, String pass) throws IOException, InterruptedException {
+     public void NegativeTestsWithoutElements(String first, String second, String email, String pass) throws IOException, InterruptedException {
         Log.info("DriverPage was opened. Start TestMethods!");
         regPage.waitUntilPageIsLoaded();
         regPage
