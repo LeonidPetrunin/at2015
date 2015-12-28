@@ -50,7 +50,7 @@ public class AvtoTestPositive extends TestNgTestBase{
                 .addLastName(lastName)
                 .addEmail(email)
                 .addPasswords(pass);
-        regPage.checkSwitchButt();
+        regPage.clickSwitchButt();
         regPage.checkAddButt();
         Assert.assertTrue(regPage.inTableFrame(), "Registration wasn't compleated!");
         regPage.clickExit();

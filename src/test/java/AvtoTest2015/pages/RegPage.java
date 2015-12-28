@@ -106,7 +106,7 @@ public class RegPage extends Page {
         return this;
     }
 
-    public void checkSwitchButt() {
+    public void clickSwitchButt() {
         Log.info("Switch buttom was pushed");
         clickElement(switchBut);
     }
