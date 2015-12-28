@@ -28,12 +28,12 @@ public class AvtoTestNegative extends TestNgTestBase{
         regPage= PageFactory.initElements(driver, RegPage.class);
         Log.info("Open driverPage!");
         regPage.openLoginPage(driver);
-        driver.manage().window().maximize();
+
     }
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethodSetUp(){
-        driver.navigate().refresh(); //Команда обновляет страницу после каждого теста!
+        driver.manage().window().maximize();
 
     }
 
@@ -50,6 +50,7 @@ public class AvtoTestNegative extends TestNgTestBase{
         regPage.checkAddButt();
         //Assert.assertTrue(regPage.inTableFrame(), "Registered not success!");
         Log.info("Registered not success!");
+        driver.navigate().refresh(); //Команда обновляет страницу после каждого теста!
     }
 /*
 
